@@ -1,0 +1,38 @@
+1.git bash 终端
+2.要给git设置全局用户名和邮箱
+语法：git config --global user.name laiyi 
+语法：git config --global user.email pc663416@qq.com
+
+3.在本地创建一个文件夹
+语法：mkdir laiyi 
+执行这条命令成功的标志就是，在文件夹下多了一个以laiyi命名的文件夹 
+
+4.进入laiyi文件夹 
+语法：cd laiyi
+改变当前路径：cd 文件名字
+
+5：初始化数据 
+语法：git init ：在本地创建一个小库 
+这条命令执行成功的标志是所在路径新创建出来一个名为.git的隐藏文件夹
+
+6：在laiyi文件夹下创建laiyi.txt文件 
+语法：touch laiyi.txt 
+touch创建文件的命令， touch 文件名1 文件名2 … 
+-----------------------------------------------------
+7：把本地laiyi.txt文件提交到暂存区 
+语法：git add . 	//.代表当前目录的所有文件，即把laiy文件夹下的所有东西全部提交
+如何把本地开发者编写的代码提交到暂存区，使用git add命令就可以
+
+8:提交到暂存区后，那开发者怎么看到这个是否提交成功呢？ 
+语法：git status 
+显示git版本管理工具的控制范围git status,会对git管理范围内所有文件进行监听，监听这些文件处于什么状态 
+
+9：把缓存区的laiyi.txt文件提交到本地主仓库内 
+语法：语法：git commit -m 备注信息 
+这条命令会把数据暂存区的所有内容都提交到本地主仓库，所以不需要指明提交那个文件
+
+10：提交到主仓库后，在提交到gitHub服务器上 
+语法：git push 网址 master 
+将本地主仓库的内部代码提交到GitHub远程服务器上
+
+在提交的过程中会让输入GitHub的账号和密码，输入即可： git push https://github.com/laiyiwen12306/a-journey-of-growth-up.git master
