@@ -1,0 +1,106 @@
+一.类与对象 
+类：是一类事物特征抽象的集合，表示的是一个共性的产物。类中包括属性（静态属性）和方法（动态属性）注：类中属性和方法也可以没有。
+
+对象：是抽象的具体化，换句话说对象就是按照类的模板创建的一个具体实例。例如：按照Car类创建一个具体行驶在马路上的汽车，这个汽车拥有Car类中定义的属性和方法。 
+类定义完成之后，不能直接使用，如果要使用，必须在主方法中（main）创建对象，由于类属于引用数据类型，所以对象的产生格式（两种格式）如下： 
+（1）格式一：声明并实例化对象 
+类名称 对象名称 = new 类名称 () ; 
+（2）格式二：先声明对象，然后实例化对象 
+类名称 对象名称 ; 
+对象名称 = new 类名称 () ; // 实例化
+当一个实例化对象产生之后，可以按照如下的方式进行类的操作： 
+        对象.属性：表示调用类之中的属性； 
+        对象.方法()：表示调用类之中的方法。
+
+   public class Car {  
+    int speed; // 存储汽车的速度  
+    String color; // 汽车颜色编号  
+    String name; // 汽车的名字  
+    String direction; // 汽车的行驶方向  
+
+    /* 构造方法，用来初始化汽车名字和颜色 */  
+    public Car(String p_name) {  
+        name = p_name;  
+    }  
+
+    // 这是Car类中的一个方法，功能是启动汽车，让它以50的速度，向"南方"行驶  
+    public void driveCar() {  
+        speed = 50; // 将速度设置为50  
+        direction = "南方"; // 将行驶方向设置为"南方"  
+    }  
+
+    // 这是Car类中的另一个方法：给汽车加速的方法，这个方法中有一个参数  
+    public void raiseSpeed(int p_speed) {  
+        if (p_speed < 0) { // 判断参数p_speed的值是否符合要求  
+            System.out.println("p_speed的值小于0，raiseSpeed方法将结束");  
+            return;  
+        }  
+        int currentSpeed = speed + p_speed; // 计算出当前速度。  
+        speed = currentSpeed; // 将当前速度赋值给speed属性  
+    }  
+
+    public static void main(String[] args) {  
+        Car car = new Car("奥迪A8");  
+        car.name="黑色";//给属性赋值  
+        car.driveCar();// 开车  
+        car.raiseSpeed(20);// 加速  
+        System.out.println("现在的速度是：" + car.speed);  
+
+    }  
+}  
+
+二.封装 
+1.概念: 隐藏对象的属性和细节，仅对外提供公共的方法进行访问。
+
+2.private 
+a. 当类的成员变量使用private 修饰符修饰，那么就不可以直接访问到该成员变量. 
+b. 当使用private 修饰的成员变量或者成员方法，仅能在本类中使用 
+c. private 对于main 方法的修饰，也是可以产生作用的.
+
+javaBean: 
+是这样一类的类: 
+他的所有成员变量都使用private 进行修饰，并且对外提供可访问的设置值和获取值的set,get方法。不同的应用场景，可能命名 
+不同，数据库的应用中称为POJO类.
+
+class Person{
+    private String name;
+    private int age;
+
+    void setName(String nameParm){
+        name = nameParm;
+    }
+
+    String getName(){
+        return name;
+    }
+
+    void setAge(int ageParm){
+        age = ageParm;
+    }
+
+    int getAge(){
+        return age;
+    }
+
+    void speak(){
+        System.out.println(name+" . "+age);
+    }
+
+    public static void main(String[] args){
+        Person person = new Person();
+        person.setName("diffo");
+        person.setAge(30);
+        person.speak();
+    }
+}
+
+class DemoBean{
+
+    static void main(String[] args){
+        Person person = new Person();
+        person.setName("diffo");
+        person.setAge(30);
+        person.speak();
+    }
+
+}
