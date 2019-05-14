@@ -1,0 +1,42 @@
+1. 在类中定义的成员变量如果你没有初始化java会自动帮你初始化,如果你定义的是局部变量       就必须初始化了
+ 2. 局部变量定义和初始化两个概念,如果你不使用该局部变量，只定义，却不初始化没有问题 ，但如果你要使用必须进行初始化即规定值大小
+     ---------------------
+
+class A{
+       public int i; //i作为类的属性不进行初始化是可以的；
+       public void show(){
+              System.out.printf("%d \n",i);     
+             }
+
+}
+class TestConst{
+	public static void main(String args[]){
+		A aa = new A();
+		aa.show();
+		int k;//这里的K是在方法内部定义的，所以要初始化！
+		System.out.prinitf("%d \n", k );
+	}
+}
+
+
+3. 比如你定义一个函数void add（int a, int b），这里的a和b就是形参。
+   当你进行函数调用的时候，add（1, 2），这里的1和2就是实参。
+
+    (形参就是函数定义时候用的，实参是在函数调用时候用的)
+
+
+
+4.关于对象在实例化时带参数的问题：
+class A{
+	punlic int i;
+	public A(int i){//有参数的构造函数A（int i）;
+	
+	}
+}
+public class TestThis_2{
+	public static void main(String args[]){
+		A aa = new A(2);//后面的参数是实例化对象的实参，实参赋值给形参
+				表示调用有参构造函数A（int i）,并将2传递给 i；
+		System.out.printf("%d \n",aa.i):
+	}
+}

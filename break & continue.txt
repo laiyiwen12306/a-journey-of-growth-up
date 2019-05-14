@@ -1,0 +1,125 @@
+break 在循环中的作用是 跳出一个循环或者结束一个循环。
+
+题目：从100打印到0 是7的倍数并且求出最大值是多少
+
+
+
+public class  Demo{
+
+	public static void main(String[]agrs) {
+  
+	  for(int i = 100;i> =0; i--){
+ 
+		//循环体为空
+ 	  }
+	if(i % 7 == 0 ){
+ 
+		//循环体为空
+	   }
+   
+	 System.out.println(i)
+  
+	  break;
+
+	}
+
+}
+
+输出的答案是98
+ 
+在这里我们用了break 那我们看一下不用break是什么样子的
+
+public class  Demo_1 {
+
+	public static void main(String[]agrs) {
+  
+	  for(int i = 100;i> =0; i--){
+ 
+		//循环体为空
+ 	  }
+	if(i % 7 == 0 ) {
+ 
+		//循环体为空
+	   }
+   
+	 System.out.println(i+“，”)
+  
+	}
+
+}
+输出的答案是98,91,84,77,70,63,56,49,42,35,28,21,14,7,0, 
+我们直观的看到了 有break和没有break的区别。 
+所以说“break再循环中的作用是 跳出一个循环或者结束一个循环
+
+
+continue:
+看到continue立即结束本次循环，继续执行下一次循环
+小明在班级的时候 和喜欢的人打招呼 和不喜欢的人不打招呼。他们班级一共有十个人。 
+小明分别讨厌 3, 5, 7这三个人 请用循环写出小明只和喜欢的人打招呼和不喜欢的人不打招呼
+
+public class Demo02 {
+
+	public static void main (Srting[]agrs){
+  
+	 	 for ( int a= 1;a<10;a++) {
+    
+			 if(a==3||a==5||a==7){
+  
+			 //什么都不做就跳出循环（循环体为空！）     
+		 	continue ;
+  
+	 	 	 }
+			 else if (a == 9  ) {
+   
+			            System.out.println(a+"早上好"+"。")
+    
+	 		            continue
+    ;
+			 }
+    
+			 System.out.print(a+"早上好"+",")
+   
+		 }
+
+	}
+
+}
+输出的结果是：1早上好,2早上好,4早上好,6早上好,8早上好,9早上好。
+ 
+下面我们不用continue来写一次看看
+
+
+public class Demo02 {
+	
+public static void main (Srting[]agrs){
+       
+		 for(int a = 1 ;a<10;a++) {
+           
+			 if(a==3||a==5||a==7) {
+
+ 
+			      //循环体为空！	      
+	   		  }
+			else if(a ==9)  {
+             
+	 		  System.out.print(a+"早上好"+"。");          
+        
+  			  }
+            
+		System.out.print(a+"早上好"+",");
+     
+  	 }
+  
+ }
+输出的结果是：1早上好,2早上好,3早上好,4早上好,5早上好,6早上好,7早上好,8早上好,9早上好。 
+9早上好, 
+上面两个例子我们不难看出来，continue 题目中所起到的作用 就是上面的那一句话： 
+看到continue时立即结束本次循环，继续执行下一次循环。
+
+总结
+
+ 
+break 和continue 他们的区别就是 ， break是直接结束循环，  而continue呢，他不是直接结束本次循环而是跳过循环，继续执行下一次的循环。 
+所以说想在某一个时刻停止一个循环的时候直接用break 简单粗暴不解释！ 
+但是你要想不想停止正循环想让循环再某一时刻不执行某个阶段然后还能继续执行剩下的程序那自然要用到continue了！
+

@@ -1,0 +1,19 @@
+//文件名“TestPackage.java”
+package zhangsan.lisi;
+public class TestPackage{
+	public static void main(String args[]) {
+		new  A().print();
+	}		
+}
+class A{
+	public void print() {
+		System.out.println("AAAA");
+	}
+}
+
+
+1.package必须放在第一条语句
+2.package zhangsan.lisi表示：把该文件中所有的类放入zhangsan.lisi这个包中，并且该文件中所有的类的真正类名将变成包名和类名 的组合。
+3.比如：类TestPackage的名字将变成  zhangsan.lisi.TestPackage
+			而不再是TestPackage
+4.编译时建议使用javac -d.TestPackage

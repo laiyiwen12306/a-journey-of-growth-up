@@ -1,0 +1,24 @@
+1.只有非static成员才可以通过类名 的方式访问；
+2.static只是表明了该类属性具有了可以通过类名访问的潜在特征，
+但是否可以通过类名访问，还必须满足一个条件：该成员必须是非private
+
+
+//错误写法：
+class A{
+	public int i = 10; //错误写法
+}
+public class TestStatic {
+	public static void main(String args[]) {
+		System.out.println(A.i);//errors,A类的属性i为非static型，
+	}			         所以不能通过 类名.属性去访问A类
+}
+
+//正确写法：
+class A{
+	public static int i = 10;//正确写法
+}
+public class TestStatic {
+	public static void main(String args[]) {
+		System.out.println(A.i);
+	}
+}

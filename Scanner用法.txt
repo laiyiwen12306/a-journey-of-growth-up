@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class TestScanner {
+	public static void main(String args[]) {
+		System.out.println("请输入一个整数；");
+		Scanner input = new Scanner(System.in);
+		int seconds = input.nextInt();
+		int minutes = seconds / 60;
+		int remainingSeconds = seconds % 60;
+		System.out.println(seconds+"seconds is "+minutes+"minutes and "+remainingSeconds+"seconds");
+	}
+}
+
+
+Scanner input = new Scanner(System.in); // 创建输入流对象 input
+int userNum = input.nextInt(); // 使用输入流对象 调用nextInt() 方法输入一个整数到userNum中
+其意思是 使用 Scanner 类中的 nextInt() 方法 输入一个整数, 该方法只是接受一个 整型的数据,如果输入的是非整数数据, 将会 抛出 InputMismatchException 异常,
+其实就是专门为 在命令式界面中 提供的一种输入类,
+Scanner 类位于 java.util 包中, 其中还有更多常用的其他方法
+例如:
+nextLine() 输入一行数据,一般会将你输入的数据当做 字符串处理
+nextDouble() 输入一个 双精度实型的 数据
+nextFloat() 输入一个 单精度实型的 数据
+nextByte() 输入一个字节的 数据
+nextLong() 输入一个long型的 数据,
+等等, 如果输入错误的话, 或者输入的东西和你 调用的方法不匹配, 都会抛出 InputMismatchException 异常
