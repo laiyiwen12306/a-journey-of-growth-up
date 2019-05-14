@@ -35,4 +35,5 @@ touch创建文件的命令， touch 文件名1 文件名2 …
 语法：git push 网址 master 
 将本地主仓库的内部代码提交到GitHub远程服务器上
 
-在提交的过程中会让输入GitHub的账号和密码，输入即可： git push https://github.com/laiyiwen12306/a-journey-of-growth-up.git master
+在提交的过程中会让输入GitHub的账号和密码，输入即可：
+ git push https://github.com/laiyiwen12306/a-journey-of-growth-up.git master
